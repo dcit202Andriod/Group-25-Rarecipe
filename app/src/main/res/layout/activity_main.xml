@@ -9,6 +9,7 @@
     android:background="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/greeting_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:context=".HomePageActivity"
@@ -24,7 +25,7 @@
             android:fontFamily="@font/poppins_semibold"
             android:text="@string/greeting"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="24sp"
             app:layout_constraintHeight_max="30dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -61,11 +62,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginTop="30dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/searchbar_background"
             android:searchIcon="@drawable/ic_search"
             app:iconifiedByDefault="false"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/greeting2_text"
+            app:layout_constraintBottom_toBottomOf="parent"
             />
 
         <ImageView
@@ -83,6 +86,48 @@
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/trending_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/greeting_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+        <TextView
+            android:id="@+id/trending_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/trending"
+            android:textSize="18sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/see_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/seeall"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toEndOf="@+id/trending_text"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 
 

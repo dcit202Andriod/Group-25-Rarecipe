@@ -3,4 +3,6 @@
     <string name="greeting">Hello Juls</string>
     <string name="greeting2">What are you cooking today?</string>
     <string name="queryhint">Search recipe</string>
+    <string name="trending">Trending now 🔥</string>
+    <string name="seeall">See all ➔</string>
 </resources>
