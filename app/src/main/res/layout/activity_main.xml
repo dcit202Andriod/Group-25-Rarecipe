@@ -39,7 +39,7 @@
         android:src="@drawable/profile_photo"
         android:scaleType="centerCrop"
         android:layout_marginTop="45dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginEnd="35dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/greeting_text"
@@ -58,6 +58,20 @@
         app:iconifiedByDefault="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/greeting2_text"
+        />
+
+    <ImageView
+        android:id="@+id/filter_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/filter_background"
+        android:padding="10dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:src="@drawable/ic_filter"
+        app:layout_constraintStart_toEndOf="@id/search_view"
+        app:layout_constraintTop_toBottomOf="@id/profile_image"
         />
 
 
