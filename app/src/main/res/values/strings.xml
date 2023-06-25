@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Rarecipe</string>
+    <string name="greeting">Hello Juls</string>
 </resources>
