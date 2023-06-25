@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Rarecipe</string>
     <string name="greeting">Hello Juls</string>
+    <string name="greeting2">What are you cooking today?</string>
 </resources>
