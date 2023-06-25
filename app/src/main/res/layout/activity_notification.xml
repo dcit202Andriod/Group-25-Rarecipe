@@ -8,12 +8,13 @@
     tools:context=".Notification_activity">
 
     <TextView
-        android:textAlignment="center"
         android:id="@+id/textView"
-        android:layout_width="128dp"
-        android:layout_height="26dp"
+        android:layout_width="154dp"
+        android:layout_height="21dp"
         android:layout_gravity="center"
         android:text="Notifications"
+        android:textAlignment="center"
+        android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
