@@ -5,4 +5,6 @@
     <string name="queryhint">Search recipe</string>
     <string name="trending">Trending now 🔥</string>
     <string name="seeall">See all ➔</string>
+    <string name="sushi">How to make sushi at home</string>
+    <string name="first_user">By Eugenia Amma</string>
 </resources>
