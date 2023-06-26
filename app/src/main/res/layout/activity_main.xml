@@ -5,11 +5,8 @@
     android:id="@+id/motionLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-=======
-    app:layoutDescription="@xml/activity_main_scene"
->>>>>>> refs/remotes/origin/CreateAccountAndSplashScreen
-    tools:context=".HomePageActivity">
+    app:layoutDescription="@xml/activity_main_scene" />
+
 
      <ImageView
          android:id="@+id/img1"
@@ -30,8 +27,6 @@
          app:layout_constraintEnd_toEndOf="parent"
          app:layout_constraintStart_toStartOf="parent"
          app:layout_constraintTop_toTopOf="parent" />
-<<<<<<< HEAD
-=======
 
      <ImageView
          android:id="@+id/logo"
@@ -43,6 +38,5 @@
          app:layout_constraintStart_toStartOf="parent"
          app:layout_constraintTop_toTopOf="parent"
          />
->>>>>>> refs/remotes/origin/CreateAccountAndSplashScreen
 
 </androidx.constraintlayout.motion.widget.MotionLayout>
