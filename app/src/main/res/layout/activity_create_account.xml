@@ -259,16 +259,36 @@
         android:layout_width="83dp"
         android:layout_height="67dp"
         app:srcCompat="@drawable/facebookbutton"
-        tools:layout_editor_absoluteX="216dp"
-        tools:layout_editor_absoluteY="588dp" />
+        tools:layout_editor_absoluteX="219dp"
+        tools:layout_editor_absoluteY="608dp" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@android:drawable/btn_star"
-        tools:layout_editor_absoluteX="74dp"
-        tools:layout_editor_absoluteY="588dp" />
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Or Sign in With"
+        android:textColor="#C5C4C4"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="580dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="63dp"
+        android:layout_height="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:srcCompat="@drawable/horizontal_line_svgrepo_com"
+        tools:layout_editor_absoluteY="582dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="59dp"
+        android:layout_height="11dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:srcCompat="@drawable/horizontal_line_svgrepo_com"
+        tools:layout_editor_absoluteY="585dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
