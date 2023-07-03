@@ -1,9 +1,9 @@
 package com.theta.rarecipe;
 
 public class FoodItem {
-    private String name;
-    private String imageUrl;
-    private String creatorName;
+    private final String name;
+    private final String imageUrl;
+    private final String creatorName;
 
     public FoodItem(String name, String imageUrl, String creatorName) {
         this.name = name;
