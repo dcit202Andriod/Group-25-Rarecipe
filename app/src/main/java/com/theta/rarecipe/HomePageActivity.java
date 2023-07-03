@@ -3,6 +3,8 @@ package com.theta.rarecipe;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.SearchView;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.json.JSONArray;
@@ -52,6 +54,8 @@ public class HomePageActivity extends AppCompatActivity {
             FoodAdapter foodAdapter = new FoodAdapter(foodItemList);
             RecyclerView recyclerView = findViewById(R.id.food_recycler_view);
             recyclerView.setAdapter(foodAdapter);
+            LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+            recyclerView.setLayoutManager(layoutManager);
         } catch (JSONException e) {
             e.printStackTrace();
         }
