@@ -3,10 +3,8 @@ package com.theta.rarecipe;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.SearchView;
-
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -18,50 +16,38 @@ import java.util.List;
 
 public class HomePageActivity extends AppCompatActivity {
 
+    private RecyclerView recyclerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
+        setupSearchView();
+        setupRecyclerView();
+        loadFoodItemsFromJSON();
+    }
+
+    private void setupSearchView() {
         SearchView searchView = findViewById(R.id.search_view);
         searchView.setIconifiedByDefault(false);
         searchView.setQueryHint("Search recipe");
+    }
 
-        // Read the JSON file and parse its contents into a JSONArray
+    private void setupRecyclerView() {
+        recyclerView = findViewById(R.id.food_recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+    }
+
+    private void loadFoodItemsFromJSON() {
         String jsonString = loadJSONFromAsset();
-
-        try {
-            // Parse the JSON string into a JSONArray
-            assert jsonString != null;
-            JSONObject jsonObject = new JSONObject(jsonString);
-            JSONArray jsonArray = jsonObject.getJSONArray("foodItems");
-
-            // Iterate through the JSON array and extract the relevant data for each FoodItem object
-            List<FoodItem> foodItemList = new ArrayList<>();
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject foodObject = jsonArray.getJSONObject(i);
-                String name = foodObject.getString("name");
-                String imageUrl = foodObject.getString("imageUrl");
-                String creatorName = foodObject.getString("creatorName");
-
-                // Create a new FoodItem object and add it to the list
-                FoodItem foodItem = new FoodItem(name, imageUrl, creatorName);
-                foodItemList.add(foodItem);
-            }
-
-            // Create an instance of the adapter, set it as the adapter for the RecyclerView,
-            // and provide the data to populate the list
+        if (jsonString != null) {
+            List<FoodItem> foodItemList = parseJSONToFoodItems(jsonString);
             FoodAdapter foodAdapter = new FoodAdapter(foodItemList);
-            RecyclerView recyclerView = findViewById(R.id.food_recycler_view);
             recyclerView.setAdapter(foodAdapter);
-            LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-            recyclerView.setLayoutManager(layoutManager);
-        } catch (JSONException e) {
-            e.printStackTrace();
         }
     }
 
-    // Helper method to load JSON data from a file in the assets folder
     private String loadJSONFromAsset() {
         String jsonString;
         try {
@@ -76,5 +62,26 @@ public class HomePageActivity extends AppCompatActivity {
             return null;
         }
         return jsonString;
+    }
+
+    private List<FoodItem> parseJSONToFoodItems(String jsonString) {
+        List<FoodItem> foodItemList = new ArrayList<>();
+        try {
+            JSONObject jsonObject = new JSONObject(jsonString);
+            JSONArray jsonArray = jsonObject.getJSONArray("foodItems");
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject foodObject = jsonArray.getJSONObject(i);
+                String name = foodObject.getString("name");
+                String imageUrl = foodObject.getString("imageUrl");
+                String creatorName = foodObject.getString("creatorName");
+
+                FoodItem foodItem = new FoodItem(name, imageUrl, creatorName);
+                foodItemList.add(foodItem);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return foodItemList;
     }
 }
