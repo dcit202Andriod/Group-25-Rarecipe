@@ -19,6 +19,15 @@
         <!-- Trending Section -->
         <include layout="@layout/trending_section" />
 
+        <!-- Popular Category -->
+        <include layout="@layout/popular_category" />
+
+        <!-- Recent Recipes -->
+        <include layout="@layout/recent_recipes"/>
+
+        <!-- Popular Creators -->
+        <include layout="@layout/popular_creators"/>
+
 
     </LinearLayout>
 
