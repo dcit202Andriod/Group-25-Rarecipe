@@ -1,7 +1,12 @@
 package com.theta.rarecipe;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,6 +22,8 @@ import java.util.List;
 public class HomePageActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
+    private List<String> filterCategories;
+    private Button activeFilterButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +33,8 @@ public class HomePageActivity extends AppCompatActivity {
         setupSearchView();
         setupRecyclerView();
         loadFoodItemsFromJSON();
+        retrieveFilterCategories();
+        addFilterButtons();
     }
 
     private void setupSearchView() {
@@ -83,5 +92,50 @@ public class HomePageActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return foodItemList;
+    }
+
+    private void retrieveFilterCategories() {
+        filterCategories = new ArrayList<>();
+        filterCategories.add("Breakfast");
+        filterCategories.add("Animalia");
+        filterCategories.add("Salad");
+        filterCategories.add("Snacks");
+        filterCategories.add("Desserts");
+    }
+
+    private void addFilterButtons() {
+        LinearLayout layoutFilterButtons = findViewById(R.id.layout_filter_buttons);
+
+        for (String category : filterCategories) {
+            Button filterButton = new Button(this);
+            filterButton.setText(category);
+            filterButton.setTextColor(Color.parseColor("#772F5E"));
+            filterButton.setBackgroundResource(R.drawable.filter_button_background);
+            filterButton.setPadding(16, 8, 16, 8);
+            filterButton.setLayoutParams(new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT));
+            filterButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    setActiveFilter(filterButton);
+                    setActiveFilter(filterButton);
+                }
+            });
+
+            layoutFilterButtons.addView(filterButton);
+        }
+    }
+
+    private void setActiveFilter(Button activeButton) {
+        if (activeFilterButton != null) {
+            activeFilterButton.setBackgroundResource(R.drawable.filter_button_background);
+            activeFilterButton.setTextColor(Color.parseColor("#772F5E"));
+        }
+
+        activeButton.setBackgroundResource(R.drawable.filter_button_background_active);
+        activeButton.setTextColor(Color.WHITE);
+
+        activeFilterButton = activeButton;
     }
 }
