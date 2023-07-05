@@ -15,12 +15,6 @@
         android:theme="@style/Theme.Rarecipe"
         tools:targetApi="31">
         <activity
-            android:name=".TrendingSectionActivity"
-            android:exported="false" />
-        <activity
-            android:name=".WelcomeSectionActivity"
-            android:exported="false" />
-        <activity
             android:name=".HomePageActivity"
             android:exported="true">
             <intent-filter>
