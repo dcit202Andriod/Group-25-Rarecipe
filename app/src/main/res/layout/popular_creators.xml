@@ -5,9 +5,7 @@
     android:id="@+id/trending_section"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
-    app:layout_constraintTop_toBottomOf="@id/greeting_layout"
-    app:layout_constraintStart_toStartOf="parent">
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/trending_text"
