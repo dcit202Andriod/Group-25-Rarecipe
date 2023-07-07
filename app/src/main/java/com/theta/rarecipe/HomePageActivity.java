@@ -26,6 +26,8 @@ public class HomePageActivity extends AppCompatActivity {
 
     private RecyclerView trendingRecyclerView;
     private RecyclerView popularCategoryRecyclerView;
+
+    private RecyclerView recentRecipesRecyclerView;
     private List<String> filterCategories;
     private TextView activeFilterTextView;
 
