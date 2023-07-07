@@ -20,7 +20,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     android:fontFamily="@font/poppins_semibold"
-    android:textColor="@color/black"/>
+    android:textColor="@color/dark_dark_grey"/>
 
 <TextView
     android:id="@+id/see_all"
@@ -33,7 +33,7 @@
     app:layout_constraintTop_toTopOf="parent"/>
 
 <androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/food_recycler_view"
+    android:id="@+id/trending_section_recycler"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="16dp"

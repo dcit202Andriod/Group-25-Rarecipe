@@ -4,15 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
+import android.widget.TextView;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -21,9 +25,12 @@ import java.util.List;
 
 public class HomePageActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
+    private RecyclerView trendingRecyclerView;
+
+    private RecyclerView popularCategoryRecyclerView;
+
     private List<String> filterCategories;
-    private Button activeFilterButton;
+    private TextView activeFilterTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +38,14 @@ public class HomePageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
 
         setupSearchView();
-        setupRecyclerView();
+        setupTrendingSectionRecyclerView();
+        setupPopularCategoryRecyclerView();
         loadFoodItemsFromJSON();
         retrieveFilterCategories();
-        addFilterButtons();
+        addFilterTextViews();
     }
+
+    // Creating the hint for the search bar
 
     private void setupSearchView() {
         SearchView searchView = findViewById(R.id.search_view);
@@ -43,24 +53,34 @@ public class HomePageActivity extends AppCompatActivity {
         searchView.setQueryHint("Search recipe");
     }
 
-    private void setupRecyclerView() {
-        recyclerView = findViewById(R.id.food_recycler_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+    // Setting Up the recycler views for the layout sections
+
+    private void setupTrendingSectionRecyclerView() {
+        trendingRecyclerView = findViewById(R.id.trending_section_recycler);
+        trendingRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
     }
+
+    private void setupPopularCategoryRecyclerView(){
+        popularCategoryRecyclerView = findViewById(R.id.popular_section_recycler);
+        popularCategoryRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+    }
+
+
+    // Loading the data stored in the json file
 
     private void loadFoodItemsFromJSON() {
         String jsonString = loadJSONFromAsset();
         if (jsonString != null) {
             List<FoodItem> foodItemList = parseJSONToFoodItems(jsonString);
             FoodAdapter foodAdapter = new FoodAdapter(foodItemList);
-            recyclerView.setAdapter(foodAdapter);
+            trendingRecyclerView.setAdapter(foodAdapter);
         }
     }
 
     private String loadJSONFromAsset() {
         String jsonString;
         try {
-            InputStream inputStream = getAssets().open("data.json");
+            InputStream inputStream = getAssets().open("trending_foods.json");
             int size = inputStream.available();
             byte[] buffer = new byte[size];
             inputStream.read(buffer);
@@ -94,6 +114,9 @@ public class HomePageActivity extends AppCompatActivity {
         return foodItemList;
     }
 
+
+    // Generating the popular category buttons
+
     private void retrieveFilterCategories() {
         filterCategories = new ArrayList<>();
         filterCategories.add("Breakfast");
@@ -103,39 +126,51 @@ public class HomePageActivity extends AppCompatActivity {
         filterCategories.add("Desserts");
     }
 
-    private void addFilterButtons() {
+
+
+    private void addFilterTextViews() {
         LinearLayout layoutFilterButtons = findViewById(R.id.layout_filter_buttons);
 
         for (String category : filterCategories) {
-            Button filterButton = new Button(this);
-            filterButton.setText(category);
-            filterButton.setTextColor(Color.parseColor("#772F5E"));
-            filterButton.setBackgroundResource(R.drawable.filter_button_background);
-            filterButton.setPadding(16, 8, 16, 8);
-            filterButton.setLayoutParams(new LinearLayout.LayoutParams(
+            TextView filterTextView = new TextView(this);
+            filterTextView.setText(category);
+            filterTextView.setTextColor(Color.parseColor("#772F5E"));
+            filterTextView.setBackgroundResource(R.drawable.filter_text_background);
+            filterTextView.setPadding(16, 8, 16, 8);
+            filterTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
+
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.WRAP_CONTENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT));
-            filterButton.setOnClickListener(new View.OnClickListener() {
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
+            layoutParams.setMargins(0, 0, dpToPx(), 0); // Convert dp to pixels
+            filterTextView.setLayoutParams(layoutParams);
+
+            filterTextView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    setActiveFilter(filterButton);
-                    setActiveFilter(filterButton);
+                    setActiveFilter(filterTextView);
                 }
             });
 
-            layoutFilterButtons.addView(filterButton);
+            layoutFilterButtons.addView(filterTextView);
         }
     }
 
-    private void setActiveFilter(Button activeButton) {
-        if (activeFilterButton != null) {
-            activeFilterButton.setBackgroundResource(R.drawable.filter_button_background);
-            activeFilterButton.setTextColor(Color.parseColor("#772F5E"));
+    private void setActiveFilter(TextView activeTextView) {
+        if (activeFilterTextView != null) {
+            activeFilterTextView.setBackgroundResource(R.drawable.filter_text_background);
+            activeFilterTextView.setTextColor(Color.parseColor("#772F5E"));
         }
 
-        activeButton.setBackgroundResource(R.drawable.filter_button_background_active);
-        activeButton.setTextColor(Color.WHITE);
+        activeTextView.setBackgroundResource(R.drawable.filter_text_background_active);
+        activeTextView.setTextColor(Color.WHITE);
 
-        activeFilterButton = activeButton;
+        activeFilterTextView = activeTextView;
+    }
+
+    private int dpToPx() {
+        float density = getResources().getDisplayMetrics().density;
+        return Math.round(20 * density);
     }
 }
