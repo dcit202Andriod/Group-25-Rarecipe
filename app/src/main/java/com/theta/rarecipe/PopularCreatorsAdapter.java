@@ -15,10 +15,10 @@ import java.util.List;
 
 public class PopularCreatorsAdapter extends RecyclerView.Adapter<PopularCreatorsAdapter.ViewHolder> {
 
-    private final List<FoodItem> foodList;
+    private final List<CreatorItem> creatorList;
 
-    public PopularCreatorsAdapter(List<FoodItem> foodList) {
-        this.foodList = foodList;
+    public PopularCreatorsAdapter(List<CreatorItem> creatorList) {
+        this.creatorList = creatorList;
     }
 
     @NonNull
@@ -31,30 +31,28 @@ public class PopularCreatorsAdapter extends RecyclerView.Adapter<PopularCreators
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        FoodItem foodItem = foodList.get(position);
-        holder.foodNameTextView.setText(foodItem.getName());
-        holder.creatorNameTextView.setText(foodItem.getCreatorName());
+        CreatorItem creatorItem = creatorList.get(position);
+        holder.creatorNameTextView.setText(creatorItem.getName());
+        holder.creatorNameTextView.setText(creatorItem.getName());
 
         // Load the image using Glide
         Glide.with(holder.itemView.getContext())
-                .load(foodItem.getImageUrl())
-                .into(holder.foodImageView);
+                .load(creatorItem.getImageUrl())
+                .into(holder.creatorImageView);
     }
 
     @Override
     public int getItemCount() {
-        return foodList.size();
+        return creatorList.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public ImageView foodImageView;
-        public TextView foodNameTextView;
+        public ImageView creatorImageView;
         public TextView creatorNameTextView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            foodImageView = itemView.findViewById(R.id.food_image);
-            foodNameTextView = itemView.findViewById(R.id.food_name);
+            creatorImageView = itemView.findViewById(R.id.creator_image);
             creatorNameTextView = itemView.findViewById(R.id.creator_name);
         }
     }

@@ -30,6 +30,8 @@ public class HomePageActivity extends AppCompatActivity {
     private RecyclerView popularCategoryRecyclerView;
     private RecyclerView recentRecipesRecyclerView;
 
+    private RecyclerView popularCreatorsRecyclerView;
+
 
     // What the Popular Category filter buttons need
     private List<String> filterCategories;
@@ -43,7 +45,7 @@ public class HomePageActivity extends AppCompatActivity {
 
         setupSearchView();
         setupRecyclerViews();
-        loadFoodItemsFromJSON();
+        loadItemsFromJSON();
         retrieveFilterCategories();
         addFilterTextViews();
     }
@@ -63,12 +65,16 @@ public class HomePageActivity extends AppCompatActivity {
 
         recentRecipesRecyclerView = findViewById(R.id.recent_recipes_recycler);
         recentRecipesRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        popularCreatorsRecyclerView = findViewById(R.id.popular_creators_recycler);
+        popularCreatorsRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
     }
 
-    private void loadFoodItemsFromJSON() {
+    private void loadItemsFromJSON() {
         String trendingJsonString = loadJSONFromAsset("trending_foods.json");
         String popularJsonString = loadJSONFromAsset("popular_foods.json");
         String recentJsonString = loadJSONFromAsset("recent_foods.json");
+        String creatorsJsonString = loadJSONFromAsset("popular_creators");
 
         if (trendingJsonString != null) {
             List<FoodItem> trendingFoodItemList = parseJSONToFoodItems(trendingJsonString);
@@ -86,6 +92,12 @@ public class HomePageActivity extends AppCompatActivity {
             List<FoodItem> recentFoodItemList = parseJSONToFoodItems(recentJsonString);
             RecentFoodAdapter recentFoodAdapter = new RecentFoodAdapter(recentFoodItemList);
             recentRecipesRecyclerView.setAdapter(recentFoodAdapter);
+        }
+
+        if (creatorsJsonString != null) {
+            List<CreatorItem> creatorItemList = parseJSONToCreatorItems(creatorsJsonString);
+            PopularCreatorsAdapter popularCreatorsAdapter = new PopularCreatorsAdapter(creatorItemList);
+            popularCreatorsRecyclerView.setAdapter(popularCreatorsAdapter);
         }
     }
 
@@ -124,6 +136,26 @@ public class HomePageActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return foodItemList;
+    }
+
+    private List<CreatorItem> parseJSONToCreatorItems(String jsonString) {
+        List<CreatorItem> creatorItemList = new ArrayList<>();
+        try {
+            JSONObject jsonObject = new JSONObject(jsonString);
+            JSONArray jsonArray = jsonObject.getJSONArray("creatorItems");
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject creatorObject = jsonArray.getJSONObject(i);
+                String name = creatorObject.getString("name");
+                String imageUrl = creatorObject.getString("imageUrl");
+
+                CreatorItem creatorItem = new CreatorItem(name, imageUrl);
+                creatorItemList.add(creatorItem);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return creatorItemList;
     }
 
     private void retrieveFilterCategories() {
