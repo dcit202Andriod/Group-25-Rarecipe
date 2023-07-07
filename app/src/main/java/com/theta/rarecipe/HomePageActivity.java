@@ -35,11 +35,6 @@ public class HomePageActivity extends AppCompatActivity {
     private List<String> filterCategories;
     private TextView activeFilterTextView;
 
-    //
-    private TrendingFoodAdapter trendingFoodAdapter;
-    private PopularFoodAdapter popularFoodAdapter;
-    private RecentFoodAdapter recentFoodAdapter;
-    private PopularCreatorsAdapter popularCreatorsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -168,7 +163,7 @@ public class HomePageActivity extends AppCompatActivity {
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
         );
-        layoutParams.setMarginEnd(dpToPx(20));
+        layoutParams.setMarginEnd(dpToPx(22));
         filterTextView.setLayoutParams(layoutParams);
 
         return filterTextView;

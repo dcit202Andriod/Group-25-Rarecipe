@@ -25,7 +25,7 @@ public class PopularCreatorsAdapter extends RecyclerView.Adapter<PopularCreators
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.food_item_layout, parent, false);
+                .inflate(R.layout.trending_food_item_layout, parent, false);
         return new ViewHolder(view);
     }
 
