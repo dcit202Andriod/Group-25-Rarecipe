@@ -24,12 +24,22 @@ import org.json.JSONObject;
 
 public class HomePageActivity extends AppCompatActivity {
 
+
+    // Declaring the Recycle Views
     private RecyclerView trendingRecyclerView;
     private RecyclerView popularCategoryRecyclerView;
-
     private RecyclerView recentRecipesRecyclerView;
+
+
+    // What the Popular Category filter buttons need
     private List<String> filterCategories;
     private TextView activeFilterTextView;
+
+    //
+    private TrendingFoodAdapter trendingFoodAdapter;
+    private PopularFoodAdapter popularFoodAdapter;
+    private RecentFoodAdapter recentFoodAdapter;
+    private PopularCreatorsAdapter popularCreatorsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,22 +65,32 @@ public class HomePageActivity extends AppCompatActivity {
 
         popularCategoryRecyclerView = findViewById(R.id.popular_section_recycler);
         popularCategoryRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        recentRecipesRecyclerView = findViewById(R.id.recent_recipes_recycler);
+        recentRecipesRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
     }
 
     private void loadFoodItemsFromJSON() {
         String trendingJsonString = loadJSONFromAsset("trending_foods.json");
         String popularJsonString = loadJSONFromAsset("popular_foods.json");
+        String recentJsonString = loadJSONFromAsset("recent_foods.json");
 
         if (trendingJsonString != null) {
             List<FoodItem> trendingFoodItemList = parseJSONToFoodItems(trendingJsonString);
-            FoodAdapter trendingFoodAdapter = new FoodAdapter(trendingFoodItemList);
+            TrendingFoodAdapter trendingFoodAdapter = new TrendingFoodAdapter(trendingFoodItemList);
             trendingRecyclerView.setAdapter(trendingFoodAdapter);
         }
 
         if (popularJsonString != null) {
             List<FoodItem> popularFoodItemList = parseJSONToFoodItems(popularJsonString);
-            FoodAdapter popularFoodAdapter = new FoodAdapter(popularFoodItemList);
+            PopularFoodAdapter popularFoodAdapter = new PopularFoodAdapter(popularFoodItemList);
             popularCategoryRecyclerView.setAdapter(popularFoodAdapter);
+        }
+
+        if (recentJsonString != null) {
+            List<FoodItem> recentFoodItemList = parseJSONToFoodItems(recentJsonString);
+            RecentFoodAdapter recentFoodAdapter = new RecentFoodAdapter(recentFoodItemList);
+            recentRecipesRecyclerView.setAdapter(recentFoodAdapter);
         }
     }
 

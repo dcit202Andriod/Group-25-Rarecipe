@@ -13,11 +13,11 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
+public class PopularFoodAdapter extends RecyclerView.Adapter<PopularFoodAdapter.ViewHolder> {
 
     private final List<FoodItem> foodList;
 
-    public FoodAdapter(List<FoodItem> foodList) {
+    public PopularFoodAdapter(List<FoodItem> foodList) {
         this.foodList = foodList;
     }
 
