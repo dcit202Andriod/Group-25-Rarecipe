@@ -12,14 +12,14 @@
         android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
-        android:background="#FDFDFD"
+        android:background="@null"
         android:hint="surname last"
-        android:textColorHint="#CAC8C8"
+        android:textColorHint="#B3B0B0"
         app:boxCornerRadiusBottomEnd="10dp"
         app:boxCornerRadiusBottomStart="10dp"
         app:boxCornerRadiusTopEnd="10dp"
         app:boxCornerRadiusTopStart="10dp"
-        app:boxStrokeColor="#CAC8C8"
+        app:boxStrokeColor="#BFBDBD"
         app:hintTextColor="#562244"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -32,7 +32,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.8"
-            android:ems="10"
             android:inputType="text"
             android:textColorHighlight="#562244"
             tools:ignore="Autofill" />
@@ -84,12 +83,12 @@
         android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:textColorHint="#D9D9D9"
+        android:textColorHint="#AEACAC"
         app:boxCornerRadiusBottomEnd="10dp"
         app:boxCornerRadiusBottomStart="10dp"
         app:boxCornerRadiusTopEnd="10dp"
         app:boxCornerRadiusTopStart="10dp"
-        app:boxStrokeColor="#C8C8C8"
+        app:boxStrokeColor="#9A9A9A"
         app:circularflow_radiusInDP="10dp"
         app:hintTextColor="#562244"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +100,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter your email"
-            android:textColorHighlight="#562244" />
+            android:textColorHighlight="#562244"
+            android:textColorHint="#040303" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -110,7 +110,7 @@
         android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:textColorHint="#D9D9D9"
+        android:textColorHint="#959393"
         app:boxCornerRadiusBottomEnd="10dp"
         app:boxCornerRadiusBottomStart="10dp"
         app:boxCornerRadiusTopEnd="10dp"
@@ -136,7 +136,7 @@
         android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:textColorHint="#D9D9D9"
+        android:textColorHint="#8A8787"
         app:boxCornerRadiusBottomEnd="10dp"
         app:boxCornerRadiusBottomStart="10dp"
         app:boxCornerRadiusTopEnd="10dp"
@@ -155,7 +155,7 @@
             android:password="true"
             android:shadowColor="#ACABAB"
             android:textColorHighlight="#562244"
-            android:textColorHint="#562244" />
+            android:textColorHint="#732E5B" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -201,7 +201,6 @@
         android:id="@+id/signIn_Btn"
         android:layout_width="320dp"
         android:layout_height="64dp"
-        android:layout_below="@id/ForgotPassword"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="12dp"
         android:background="@drawable/sign_in_button_border"
