@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Rarecipe</string>
+    <string name="app_name">Rarecipy_Log_in_page</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="Hello">Hello,</string>
+    <string name="Email">Email</string>
+    <string name="Enter_Email">Enter Email</string>
+    <string name="Enter_Password">Enter Password</string>
+    <string name="welcome_back">Welcome Back!</string>
 </resources>
