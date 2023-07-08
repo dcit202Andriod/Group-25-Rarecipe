@@ -13,6 +13,7 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>>
     </style>
 
+<<<<<<< HEAD
 
     <style name="Button1">
         <item name="android:layout_width">wrap_content</item>
@@ -29,4 +30,11 @@
 
 
 
+=======
+    <style name="Theme.Rarecipe" parent="Base.Theme.Rarecipe" />
+    <style name="SplashScreen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/colorAccent</item>
+    </style>
+>>>>>>> CreateAccount_page
 </resources>
