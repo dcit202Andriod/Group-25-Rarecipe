@@ -1,5 +1,7 @@
 package com.theta.rarecipe;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -16,6 +19,7 @@ import java.util.List;
 public class RecentFoodAdapter extends RecyclerView.Adapter<RecentFoodAdapter.ViewHolder> {
 
     private final List<FoodItem> foodList;
+    private Context context;
 
     public RecentFoodAdapter(List<FoodItem> foodList) {
         this.foodList = foodList;
@@ -39,6 +43,12 @@ public class RecentFoodAdapter extends RecyclerView.Adapter<RecentFoodAdapter.Vi
         Glide.with(holder.itemView.getContext())
                 .load(foodItem.getImageUrl())
                 .into(holder.foodImageView);
+        holder.popularCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, StepsActivity.class);
+            }
+        });
     }
 
     @Override
@@ -50,12 +60,14 @@ public class RecentFoodAdapter extends RecyclerView.Adapter<RecentFoodAdapter.Vi
         public ImageView foodImageView;
         public TextView foodNameTextView;
         public TextView creatorNameTextView;
+        public CardView popularCardView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             foodImageView = itemView.findViewById(R.id.food_image);
             foodNameTextView = itemView.findViewById(R.id.food_name);
             creatorNameTextView = itemView.findViewById(R.id.creator_name);
+            popularCardView = itemView.findViewById(R.id.popular_cardView);
         }
     }
 }
