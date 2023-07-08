@@ -7,9 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    android:background="@color/white"
-    tools:context=".LoginPageActivity">
-
     <TextView
         android:id="@+id/hello"
         android:layout_width="match_parent"
