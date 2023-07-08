@@ -2,9 +2,6 @@
 <resources>
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize the primary colors -->
-        <item name="colorPrimary">#FF562244</item>
-        <item name="colorPrimaryDark">#FF562244</item>
-        <item name="colorAccent">#FF562244</item>
     </style>
 
 </resources>

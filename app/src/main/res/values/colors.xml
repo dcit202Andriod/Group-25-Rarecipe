@@ -2,23 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-<<<<<<< HEAD
-<<<<<<< HEAD
     <color name="red">#FF0000</color>
-    <color name="green">#00FF00</color>
-=======
     <color name="ash">#B2BEB5</color>
-<<<<<<< HEAD
     <color name="green">#4CAF50</color> <!-- Replace #FF0000 with your desired color code -->
-
-
-=======
->>>>>>> LoginPageBelow
->>>>>>> Login
-=======
     <color name="grey">#A9A9A9</color>
     <color name="light_grey">#D9D9D9</color>
     <color name="dark_grey">#5E5E5E</color>
     <color name="dark_dark_grey">#303030</color>
->>>>>>> HomePage
+    <color name="transparent">#00FFFFFF</color>
 </resources>
