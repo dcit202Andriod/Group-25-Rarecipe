@@ -1,6 +1,4 @@
 <resources>
-<<<<<<< HEAD
-    <string name="app_name">Rarecipe</string>
     <string name="title_activity_main">MainActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -45,8 +43,7 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
-=======
-<<<<<<< HEAD
+
     <string name="app_name">Rarecipy_Log_in_page</string>
     <string name="forgot_password">Forgot Password</string>
     <string name="Hello">Hello,</string>
@@ -54,15 +51,11 @@
     <string name="Enter_Email">Enter Email</string>
     <string name="Enter_Password">Enter Password</string>
     <string name="welcome_back">Welcome Back!</string>
-=======
-    <string name="app_name">login_page_below</string>
     <string name="sign_in">Sign In</string>
-    <string name="sign_up">Sign up</string>
     <string name="Or_sign_in_with">Or sign in with</string>
     <string name="Sign_in_with_google">sign in with your Google account </string>
     <string name="Sign_in_with_facebook">sign in with your Facebook account</string>
     <string name="Click_to_sign_in">sign in</string>
     <string name="new_member">Don\'t have an account?</string>
->>>>>>> LoginPageBelow
->>>>>>> Login
+
 </resources>
