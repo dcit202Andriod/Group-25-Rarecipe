@@ -28,13 +28,13 @@ public class HomePageActivity extends AppCompatActivity {
 
 
     // Declaring the Recycle Views
-    private Context context;
+    public Context context;
     private RecyclerView trendingRecyclerView;
     private RecyclerView popularCategoryRecyclerView;
     private RecyclerView recentRecipesRecyclerView;
 
     private RecyclerView popularCreatorsRecyclerView;
-    private List<FoodItem> foodItemList;
+    //public List<FoodItem> foodItemList;
 
 
     // What the Popular Category filter buttons need

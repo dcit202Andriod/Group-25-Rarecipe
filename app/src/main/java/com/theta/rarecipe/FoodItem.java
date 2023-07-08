@@ -25,5 +25,4 @@ public class FoodItem {
     public String getCreatorName() {
         return creatorName;
     }
-
 }

@@ -19,7 +19,7 @@ import java.util.List;
 public class RecentFoodAdapter extends RecyclerView.Adapter<RecentFoodAdapter.ViewHolder> {
 
     private final List<FoodItem> foodList;
-    private Context context;
+    public Context context;
 
     public RecentFoodAdapter(List<FoodItem> foodList) {
         this.foodList = foodList;
@@ -54,14 +54,14 @@ public class RecentFoodAdapter extends RecyclerView.Adapter<RecentFoodAdapter.Vi
         public ImageView foodImageView;
         public TextView foodNameTextView;
         public TextView creatorNameTextView;
-        public CardView popularCardView;
+        private CardView recentCardView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             foodImageView = itemView.findViewById(R.id.food_image);
             foodNameTextView = itemView.findViewById(R.id.food_name);
             creatorNameTextView = itemView.findViewById(R.id.creator_name);
-            popularCardView = itemView.findViewById(R.id.popular_cardView);
+            recentCardView = itemView.findViewById(R.id.popular_cardView);
         }
     }
 }
