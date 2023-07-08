@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.TypedValue;
@@ -31,6 +32,7 @@ public class HomePageActivity extends AppCompatActivity {
     private RecyclerView recentRecipesRecyclerView;
 
     private RecyclerView popularCreatorsRecyclerView;
+    private List<FoodItem> foodItemList;
 
 
     // What the Popular Category filter buttons need
@@ -54,6 +56,23 @@ public class HomePageActivity extends AppCompatActivity {
         SearchView searchView = findViewById(R.id.search_view);
         searchView.setIconifiedByDefault(false);
         searchView.setQueryHint("Search recipe");
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Intent intent = new Intent(HomePageActivity.this, SearchScreen.class);
+                intent.putParcelableArrayListExtra("foodItemList", new ArrayList<>(foodItemList));
+                //intent.putExtra("query", query);
+                startActivity(intent);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+
     }
 
     private void setupRecyclerViews() {
