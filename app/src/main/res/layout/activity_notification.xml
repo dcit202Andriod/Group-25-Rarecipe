@@ -88,6 +88,7 @@
                 android:id="@+id/imageButton3"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:background="@android:color/transparent"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/document_text" />
 
@@ -118,6 +119,7 @@
                 android:id="@+id/imageButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:background="@android:color/transparent"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/document_text" />
 
