@@ -1,4 +1,4 @@
-package com.theta.rarecipe;
+package com.theta.rarecipe.classes;
 
 public class CreatorItem {
     private final String name;

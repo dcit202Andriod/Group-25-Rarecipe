@@ -1,4 +1,4 @@
-package com.theta.rarecipe;
+package com.theta.rarecipe.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,14 +10,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.theta.rarecipe.classes.FoodItem;
+import com.theta.rarecipe.R;
 
 import java.util.List;
 
-public class RecentFoodAdapter extends RecyclerView.Adapter<RecentFoodAdapter.ViewHolder> {
+public class TrendingFoodAdapter extends RecyclerView.Adapter<TrendingFoodAdapter.ViewHolder> {
 
     private final List<FoodItem> foodList;
 
-    public RecentFoodAdapter(List<FoodItem> foodList) {
+    public TrendingFoodAdapter(List<FoodItem> foodList) {
         this.foodList = foodList;
     }
 
@@ -25,7 +27,7 @@ public class RecentFoodAdapter extends RecyclerView.Adapter<RecentFoodAdapter.Vi
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.recent_food_item_layout, parent, false);
+                .inflate(R.layout.trending_food_item_layout, parent, false);
         return new ViewHolder(view);
     }
 

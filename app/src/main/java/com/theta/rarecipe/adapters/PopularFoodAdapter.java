@@ -1,4 +1,4 @@
-package com.theta.rarecipe;
+package com.theta.rarecipe.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.theta.rarecipe.classes.FoodItem;
+import com.theta.rarecipe.R;
 
 import java.util.List;
 

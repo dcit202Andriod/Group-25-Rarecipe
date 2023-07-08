@@ -1,4 +1,4 @@
-package com.theta.rarecipe;
+package com.theta.rarecipe.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,6 +23,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.bumptech.glide.Glide;
+import com.theta.rarecipe.R;
+import com.theta.rarecipe.adapters.PopularCreatorsAdapter;
+import com.theta.rarecipe.adapters.PopularFoodAdapter;
+import com.theta.rarecipe.adapters.RecentFoodAdapter;
+import com.theta.rarecipe.adapters.TrendingFoodAdapter;
+import com.theta.rarecipe.classes.CreatorItem;
+import com.theta.rarecipe.classes.FoodItem;
 
 
 public class HomePageActivity extends AppCompatActivity {
