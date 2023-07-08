@@ -1,4 +1,4 @@
-package com.theta.rarecipe;
+package com.theta.rarecipe.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.HomePageActivity"
+    android:layout_width="match_parent"
+    android:backgroundTint="@color/white"
+    android:layout_height="match_parent"
+    android:contentDescription="@string/lie"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Welcoming Section -->
+        <include layout="@layout/welcome_section" />
+
+        <!-- Trending Section -->
+        <include layout="@layout/trending_section" />
+
+        <!-- Popular Category -->
+        <include layout="@layout/popular_category" />
+
+        <!-- Recent Recipes -->
+        <include layout="@layout/recent_recipes"/>
+
+        <!-- Popular Creators -->
+        <include layout="@layout/popular_creators"/>
+
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>
