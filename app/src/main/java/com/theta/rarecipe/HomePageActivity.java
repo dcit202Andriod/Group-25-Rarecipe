@@ -63,12 +63,12 @@ public class HomePageActivity extends AppCompatActivity {
                 Intent intent = new Intent(HomePageActivity.this, SearchScreen.class);
                 intent.putParcelableArrayListExtra("foodItemList", new ArrayList<>(foodItemList));
                 startActivity(intent);
-                return false;
+                return true;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                return false;
+                return true;
             }
         });
 
