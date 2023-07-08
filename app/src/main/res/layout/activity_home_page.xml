@@ -21,13 +21,13 @@
         <include layout="@layout/trending_section" />
 
         <!-- Popular Category -->
-        <include layout="@layout/popular_category" />
+        <include layout="@layout/popular_category_section" />
 
         <!-- Recent Recipes -->
-        <include layout="@layout/recent_recipes"/>
+        <include layout="@layout/recent_recipes_section"/>
 
         <!-- Popular Creators -->
-        <include layout="@layout/popular_creators"/>
+        <include layout="@layout/popular_creators_section"/>
 
     </LinearLayout>
 
