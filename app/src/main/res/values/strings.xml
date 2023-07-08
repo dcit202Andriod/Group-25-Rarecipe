@@ -1,4 +1,5 @@
 <resources>
+<<<<<<< HEAD
     <string name="title_activity_main">MainActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -58,4 +59,18 @@
     <string name="Click_to_sign_in">sign in</string>
     <string name="new_member">Don\'t have an account?</string>
 
+=======
+    <string name="app_name">Rarecipe</string>
+    <string name="greeting">Hello Juls</string>
+    <string name="greeting2">What are you cooking today?</string>
+    <string name="queryhint">Search recipe</string>
+    <string name="trending">Trending now 🔥</string>
+    <string name="seeall">See all ➔</string>
+    <string name="sushi">How to make sushi at home</string>
+    <string name="first_user">By Eugenia Amma</string>
+    <string name="lie">OOlala</string>
+    <string name="popular_category">Popular Category</string>
+    <string name="recent_recipes">Recent Recipes</string>
+    <string name="popular_creators">Popular creators</string>
+>>>>>>> HomePage
 </resources>

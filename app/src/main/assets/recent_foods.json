@@ -1,0 +1,19 @@
+{
+  "foodItems": [
+    {
+      "name": "Fried Milk",
+      "imageUrl": "https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_860,ar_3:2/v1/img/recipes/10/44/84/TRDdT2afR9yGQxeJHqaE_fm.jpg",
+      "creatorName": "Bayou Mimi"
+    },
+    {
+      "name": "Frog Legs",
+      "imageUrl": "https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_860,ar_3:2/v1/img/recipes/37/36/81/picXJqO53.jpg",
+      "creatorName": "Justin Bieber"
+    },
+    {
+      "name": "Alligator Bites",
+      "imageUrl": "https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_860,ar_3:2/v1/img/recipes/37/35/89/pice0Gozt.jpg",
+      "creatorName": "Brice Palmer"
+    }
+  ]
+}

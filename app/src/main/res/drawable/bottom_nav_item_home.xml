@@ -1,0 +1,5 @@
+<!-- bottom_nav_item_1.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ic_home_active" android:state_checked="true" />
+    <item android:drawable="@drawable/ic_home_inactive" />
+</selector>
