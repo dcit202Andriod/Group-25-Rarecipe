@@ -43,12 +43,6 @@ public class RecentFoodAdapter extends RecyclerView.Adapter<RecentFoodAdapter.Vi
         Glide.with(holder.itemView.getContext())
                 .load(foodItem.getImageUrl())
                 .into(holder.foodImageView);
-        holder.popularCardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, StepsActivity.class);
-            }
-        });
     }
 
     @Override

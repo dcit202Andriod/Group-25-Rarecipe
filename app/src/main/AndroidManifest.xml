@@ -24,9 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SearchScreen"
-            android:label="Search Screen Activity">
-
+            android:name=".SearchScreen">
         </activity>
 
         <meta-data

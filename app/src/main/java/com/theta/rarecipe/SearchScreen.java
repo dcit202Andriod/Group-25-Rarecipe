@@ -29,7 +29,7 @@ public class SearchScreen extends AppCompatActivity {
         searchView.setQueryHint("Search recipe");
 
         Intent intent = getIntent();
-        foodItemList = intent.getParcelableArrayListExtra("foodItemList");
+//        foodItemList = intent.getParcelableArrayListExtra("foodItemList");
         setupRecyclerViews();
 
     }
