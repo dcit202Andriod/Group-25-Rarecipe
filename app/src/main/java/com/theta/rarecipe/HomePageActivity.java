@@ -94,7 +94,7 @@ public class HomePageActivity extends AppCompatActivity {
             List<FoodItem> recentFoodItemList = parseJSONToFoodItems(recentJsonString);
             RecentFoodAdapter recentFoodAdapter = new RecentFoodAdapter(recentFoodItemList);
             recentRecipesRecyclerView.setAdapter(recentFoodAdapter);
-        }
+        }2
 
         if (creatorsJsonString != null) {
             List<CreatorItem> creatorItemList = parseJSONToCreatorItems(creatorsJsonString);

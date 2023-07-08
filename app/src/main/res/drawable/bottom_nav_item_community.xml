@@ -1,5 +1,5 @@
 <!-- bottom_nav_item_1.xml -->
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/ic_community_selected" android:state_checked="true" />
-    <item android:drawable="@drawable/ic_community_unselected" />
+    <item android:drawable="@drawable/ic_community_active" android:state_checked="true" />
+    <item android:drawable="@drawable/ic_community_inactive" />
 </selector>
