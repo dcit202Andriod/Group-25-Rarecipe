@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">Rarecipe</string>
+    <string name="app_name">login_page_below</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign up</string>
+    <string name="Or_sign_in_with">Or sign in with</string>
+    <string name="Sign_in_with_google">sign in with your Google account </string>
+    <string name="Sign_in_with_facebook">sign in with your Facebook account</string>
+    <string name="Click_to_sign_in">sign in</string>
+    <string name="new_member">Don\'t have an account?</string>
 </resources>
