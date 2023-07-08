@@ -1,5 +1,6 @@
 package com.theta.rarecipe;
 
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -15,6 +16,7 @@ public class FoodItem implements Parcelable {
         this.imageUrl = imageUrl;
         this.creatorName = creatorName;
     }
+
 
     protected FoodItem(Parcel in) {
         name = in.readString();

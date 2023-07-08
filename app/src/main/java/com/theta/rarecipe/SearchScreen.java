@@ -2,7 +2,6 @@ package com.theta.rarecipe;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.EditText;
 import android.widget.SearchView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +15,7 @@ import java.util.List;
 
 public class SearchScreen extends AppCompatActivity {
 
-    private EditText searchV;
+    private SearchView searchView;
     private RecyclerView popularCategoryRecyclerView;
     private RecyclerView recentRecipesRecyclerView;
     private List<FoodItem> foodItemList;
@@ -25,7 +24,9 @@ public class SearchScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_result);
 
-        searchV = findViewById(R.id.search_view);
+        searchView = findViewById(R.id.search_view);
+        searchView.setIconifiedByDefault(false);
+        searchView.setQueryHint("Search recipe");
 
         Intent intent = getIntent();
         foodItemList = intent.getParcelableArrayListExtra("foodItemList");

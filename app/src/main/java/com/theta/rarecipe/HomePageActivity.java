@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Parcelable;
+import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -27,6 +30,7 @@ public class HomePageActivity extends AppCompatActivity {
 
 
     // Declaring the Recycle Views
+    private Context context;
     private RecyclerView trendingRecyclerView;
     private RecyclerView popularCategoryRecyclerView;
     private RecyclerView recentRecipesRecyclerView;
@@ -45,9 +49,10 @@ public class HomePageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
-        setupSearchView();
+        context = this;
         setupRecyclerViews();
         loadItemsFromJSON();
+        setupSearchView();
         retrieveFilterCategories();
         addFilterTextViews();
     }
@@ -57,20 +62,23 @@ public class HomePageActivity extends AppCompatActivity {
         searchView.setIconifiedByDefault(false);
         searchView.setQueryHint("Search recipe");
 
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                Intent intent = new Intent(HomePageActivity.this, SearchScreen.class);
-                intent.putParcelableArrayListExtra("foodItemList", new ArrayList<>(foodItemList));
-                startActivity(intent);
-                return true;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                return true;
-            }
-        });
+//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String query) {
+//                if(!TextUtils.isEmpty(query)){
+//                    foodItemList = (List<FoodItem>) loadItemsFromJSON();
+//                    Intent intent = new Intent(HomePageActivity.this, SearchScreen.class);
+//                    intent.putParcelableArrayListExtra("foodItemList", new ArrayList<>(foodItemList));
+//                    startActivity(intent);
+//                }
+//                return true;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String newText) {
+//                return true;
+//            }
+//        });
 
     }
 
@@ -88,7 +96,7 @@ public class HomePageActivity extends AppCompatActivity {
         popularCreatorsRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
     }
 
-    private void loadItemsFromJSON() {
+    private ArrayList<? extends Parcelable> loadItemsFromJSON() {
         String trendingJsonString = loadJSONFromAsset("trending_foods.json");
         String popularJsonString = loadJSONFromAsset("popular_foods.json");
         String recentJsonString = loadJSONFromAsset("recent_foods.json");
@@ -117,6 +125,7 @@ public class HomePageActivity extends AppCompatActivity {
             PopularCreatorsAdapter popularCreatorsAdapter = new PopularCreatorsAdapter(creatorItemList);
             popularCreatorsRecyclerView.setAdapter(popularCreatorsAdapter);
         }
+        return null;
     }
 
     private String loadJSONFromAsset(String filename) {
