@@ -9,7 +9,7 @@
     android:background="@color/white">
 
     <TextView
-        android:id="@+id/trending_text"
+        android:id="@+id/popular_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/popular_creators"
@@ -28,7 +28,7 @@
         android:text="@string/seeall"
         android:layout_marginStart="100dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintStart_toEndOf="@+id/trending_text"
+        app:layout_constraintStart_toEndOf="@+id/popular_text"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -39,7 +39,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginBottom="16dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintTop_toBottomOf="@id/trending_text"
+        app:layout_constraintTop_toBottomOf="@id/popular_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />

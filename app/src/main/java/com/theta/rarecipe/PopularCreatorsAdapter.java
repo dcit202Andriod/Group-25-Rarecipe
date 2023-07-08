@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -33,13 +34,13 @@ public class PopularCreatorsAdapter extends RecyclerView.Adapter<PopularCreators
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         CreatorItem creatorItem = creatorList.get(position);
         holder.creatorNameTextView.setText(creatorItem.getName());
-        holder.creatorNameTextView.setText(creatorItem.getName());
 
         // Load the image using Glide
         Glide.with(holder.itemView.getContext())
                 .load(creatorItem.getImageUrl())
                 .into(holder.creatorImageView);
     }
+
 
     @Override
     public int getItemCount() {

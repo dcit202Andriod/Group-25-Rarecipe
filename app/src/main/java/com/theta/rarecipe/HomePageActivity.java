@@ -22,6 +22,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.bumptech.glide.Glide;
+
+
 public class HomePageActivity extends AppCompatActivity {
 
 
@@ -29,7 +32,6 @@ public class HomePageActivity extends AppCompatActivity {
     private RecyclerView trendingRecyclerView;
     private RecyclerView popularCategoryRecyclerView;
     private RecyclerView recentRecipesRecyclerView;
-
     private RecyclerView popularCreatorsRecyclerView;
 
 
@@ -74,7 +76,7 @@ public class HomePageActivity extends AppCompatActivity {
         String trendingJsonString = loadJSONFromAsset("trending_foods.json");
         String popularJsonString = loadJSONFromAsset("popular_foods.json");
         String recentJsonString = loadJSONFromAsset("recent_foods.json");
-        String creatorsJsonString = loadJSONFromAsset("popular_creators");
+        String creatorsJsonString = loadJSONFromAsset("popular_creators.json");
 
         if (trendingJsonString != null) {
             List<FoodItem> trendingFoodItemList = parseJSONToFoodItems(trendingJsonString);
@@ -142,12 +144,12 @@ public class HomePageActivity extends AppCompatActivity {
         List<CreatorItem> creatorItemList = new ArrayList<>();
         try {
             JSONObject jsonObject = new JSONObject(jsonString);
-            JSONArray jsonArray = jsonObject.getJSONArray("creatorItems");
+            JSONArray jsonArray = jsonObject.getJSONArray("creators");
 
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject creatorObject = jsonArray.getJSONObject(i);
                 String name = creatorObject.getString("name");
-                String imageUrl = creatorObject.getString("imageUrl");
+                String imageUrl = creatorObject.getString("image_url"); // Updated key
 
                 CreatorItem creatorItem = new CreatorItem(name, imageUrl);
                 creatorItemList.add(creatorItem);
@@ -157,6 +159,7 @@ public class HomePageActivity extends AppCompatActivity {
         }
         return creatorItemList;
     }
+
 
     private void retrieveFilterCategories() {
         filterCategories = new ArrayList<>();
