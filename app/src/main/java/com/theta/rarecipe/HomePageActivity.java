@@ -9,7 +9,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -31,7 +30,6 @@ public class HomePageActivity extends AppCompatActivity {
     private RecyclerView trendingRecyclerView;
     private RecyclerView popularCategoryRecyclerView;
     private RecyclerView recentRecipesRecyclerView;
-    private EditText editText;
 
     private RecyclerView popularCreatorsRecyclerView;
     private List<FoodItem> foodItemList;
@@ -55,16 +53,24 @@ public class HomePageActivity extends AppCompatActivity {
     }
 
     private void setupSearchView() {
-        editText = findViewById(R.id.search_view);
-        editText.setOnClickListener(new View.OnClickListener() {
+        SearchView searchView = findViewById(R.id.search_view);
+        searchView.setIconifiedByDefault(false);
+        searchView.setQueryHint("Search recipe");
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
-            public void onClick(View v) {
+            public boolean onQueryTextSubmit(String query) {
                 Intent intent = new Intent(HomePageActivity.this, SearchScreen.class);
                 intent.putParcelableArrayListExtra("foodItemList", new ArrayList<>(foodItemList));
                 startActivity(intent);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
             }
         });
-
 
     }
 

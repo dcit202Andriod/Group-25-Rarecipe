@@ -25,7 +25,9 @@
         </activity>
         <activity
             android:name=".SearchScreen"
-            android:label="Search Screen Activity" />
+            android:label="Search Screen Activity">
+
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"
