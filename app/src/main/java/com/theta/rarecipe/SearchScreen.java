@@ -2,6 +2,7 @@ package com.theta.rarecipe;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.EditText;
 import android.widget.SearchView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +16,7 @@ import java.util.List;
 
 public class SearchScreen extends AppCompatActivity {
 
-    private SearchView searchV;
+    private EditText searchV;
     private RecyclerView popularCategoryRecyclerView;
     private RecyclerView recentRecipesRecyclerView;
     private List<FoodItem> foodItemList;
@@ -25,8 +26,6 @@ public class SearchScreen extends AppCompatActivity {
         setContentView(R.layout.activity_search_result);
 
         searchV = findViewById(R.id.search_view);
-        searchV.setIconifiedByDefault(false);
-        searchV.setQueryHint("Search recipe");
 
         Intent intent = getIntent();
         foodItemList = intent.getParcelableArrayListExtra("foodItemList");
@@ -46,17 +45,5 @@ public class SearchScreen extends AppCompatActivity {
         RecentFoodAdapter recentFoodAdapter = new RecentFoodAdapter(foodItemList);
         recentRecipesRecyclerView.setAdapter(recentFoodAdapter);
     }
-//    private List<FoodItem> getFilteredFoodItems(String query, List<FoodItem> filteredFoodItems) {
-//
-//         filteredFoodItems = new ArrayList<>();
-//
-//
-//        for (FoodItem foodItem : foodItemList) {
-//            if (foodItem.getName().toLowerCase().contains(query.toLowerCase())) {
-//                filteredFoodItems.add(foodItem);
-//            }
-//        }
-//
-//        return filteredFoodItems;
-//    }
+
 }
