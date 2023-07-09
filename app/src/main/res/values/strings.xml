@@ -1,5 +1,4 @@
 <resources>
-<<<<<<< HEAD
     <string name="title_activity_main">MainActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -7,6 +6,9 @@
     <string name="sign_up">Sign Up</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="name_hint">Surname last</string>
+    <string name="password">Create password</string>
+    <string name="password_confirm">Confirm password</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
@@ -58,9 +60,6 @@
     <string name="Sign_in_with_facebook">sign in with your Facebook account</string>
     <string name="Click_to_sign_in">sign in</string>
     <string name="new_member">Don\'t have an account?</string>
-
-=======
-    <string name="app_name">Rarecipe</string>
     <string name="greeting">Hello Juls</string>
     <string name="greeting2">What are you cooking today?</string>
     <string name="queryhint">Search recipe</string>
@@ -72,5 +71,4 @@
     <string name="popular_category">Popular Category</string>
     <string name="recent_recipes">Recent Recipes</string>
     <string name="popular_creators">Popular creators</string>
->>>>>>> HomePage
 </resources>
