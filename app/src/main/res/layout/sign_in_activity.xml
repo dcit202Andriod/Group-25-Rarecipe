@@ -12,7 +12,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="20dp"
-        android:gravity="left"
+        android:gravity="start"
         android:text="@string/Hello"
         android:textStyle="bold"
         android:textColor="@color/black"
@@ -25,11 +25,11 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="50dp"
-        android:gravity="left"
+        android:gravity="start"
         android:text="@string/welcome_back"
         android:layout_below="@id/hello"
         android:textColor="@color/black"
-        android:textSize="22dp" />
+        android:textSize="22sp" />
 
 
     <TextView
@@ -41,20 +41,21 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:gravity="left"
+        android:gravity="start"
         android:text="@string/Email"
         android:textColor="@color/black"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/FullName"
+        android:inputType="textEmailAddress"
+        android:autofillHints="name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/EmailAddress"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginBottom="2dp"
         android:hint="@string/Enter_Email"
         android:background="@drawable/edit_text_border"
@@ -64,28 +65,29 @@
         android:drawablePadding="20dp"/>
 
     <TextView
+        android:id="@+id/Password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/Password"
-        android:text="@string/Enter_Password"
         android:layout_below="@id/FullName"
         android:layout_marginStart="20dp"
-        android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="start"
+        android:text="@string/Enter_Password"
         android:textColor="@color/black"
-        android:textSize="20dp"
-        android:gravity="left"/>
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/enterPassword"
+        android:inputType="textVisiblePassword"
+        android:autofillHints="password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/Password"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginBottom="2dp"
         android:hint="@string/Enter_Password"
         android:background="@drawable/edit_text_border"
@@ -100,14 +102,13 @@
         android:layout_height="wrap_content"
         android:text="@string/forgot_password"
         android:layout_below="@id/enterPassword"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:textColor="#FFC107"
         android:textSize="15sp"
-        android:gravity="left"/>
+        android:gravity="start"/>
 
     <Button
         android:id="@+id/signIn_Btn"

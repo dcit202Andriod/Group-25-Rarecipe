@@ -6,15 +6,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.theta.rarecipe.R;
+
 public class SplashActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        new Handler().postDelayed(new Runnable(){
+        setContentView(R.layout.splash_screen);
+
+        new Handler().postDelayed(new Runnable() {
             @Override
-            public void run(){
-                Intent intent = new Intent(SplashActivity.this, CreateAccount.class);
+            public void run() {
+                Intent intent = new Intent(SplashActivity.this, SignInActivity.class);
                 startActivity(intent);
                 finish();
             }
