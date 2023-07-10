@@ -4,15 +4,15 @@
         android:icon="@drawable/ic_home"
         android:title="" />
     <item
-        android:id="@+id/nav_inactive"
+        android:id="@+id/nav_bookmark"
         android:icon="@drawable/ic_bookmark"
         android:title="" />
     <item
         android:id="@+id/nav_add"
-        android:icon="@drawable/plus"
+        android:icon="@drawable/ic_add"
         android:title="" />
     <item
-        android:id="@+id/nav_notifications"
+        android:id="@+id/nav_notification"
         android:icon="@drawable/ic_notification"
         android:title="" />
     <item
