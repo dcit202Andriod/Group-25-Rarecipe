@@ -4,5 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="purple">#772F5E</color>
     <color name="Your">#D3DDA1BF</color>
+    <color name="nav_button_color">#393838</color>
 
 </resources>

@@ -1,11 +1,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_home"
-        android:icon="@drawable/home_2"
+        android:icon="@drawable/ic_home"
         android:title="" />
     <item
         android:id="@+id/nav_inactive"
-        android:icon="@drawable/inactive"
+        android:icon="@drawable/ic_bookmark"
         android:title="" />
     <item
         android:id="@+id/nav_add"
@@ -13,10 +13,10 @@
         android:title="" />
     <item
         android:id="@+id/nav_notifications"
-        android:icon="@drawable/notification_bing"
+        android:icon="@drawable/ic_notification"
         android:title="" />
     <item
         android:id="@+id/nav_profile"
-        android:icon="@drawable/profile"
+        android:icon="@drawable/ic_profile"
         android:title="" />
 </menu>

@@ -7,17 +7,17 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
-        android:layout_width="0dp"
-        android:layout_height="64dp"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
         android:layout_gravity="bottom"
-        app:itemIconTint="@color/purple"
-        app:itemTextColor="@color/black"
         android:background="@color/white"
         app:menu="@menu/button_menu"
         style="@style/AppBottomNavigationView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:itemIconTint="@color/buttom_nav_item_color"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

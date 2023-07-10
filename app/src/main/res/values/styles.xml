@@ -2,7 +2,7 @@
 <resources>
     <style name="AppBottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
         <item name="itemBackground">@color/white</item> <!-- Customize the background color -->
-        <item name="elevation">100dp</item> <!-- Set elevation to 0dp to remove the shadow effect -->
+        <item name="elevation">8dp</item> <!-- Set elevation to 0dp to remove the shadow effect -->
     </style>
 
 </resources>
