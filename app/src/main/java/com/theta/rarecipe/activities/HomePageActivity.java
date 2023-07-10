@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.View;
+import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -56,12 +57,18 @@ public class HomePageActivity extends AppCompatActivity {
         loadItemsFromJSON();
         retrieveFilterCategories();
         addFilterTextViews();
+        RemoveScrollBar();
     }
 
     private void setupSearchView() {
         SearchView searchView = findViewById(R.id.search_view);
         searchView.setIconifiedByDefault(false);
         searchView.setQueryHint("Search recipe");
+    }
+
+    private void RemoveScrollBar(){
+        HorizontalScrollView popularFilterButtons = findViewById(R.id.filter_buttons_scrollview);
+        popularFilterButtons.setHorizontalScrollBarEnabled(false);
     }
 
     private void setupRecyclerViews() {

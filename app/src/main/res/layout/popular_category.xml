@@ -23,6 +23,7 @@
 
     <!-- Scrollable Filter Buttons -->
     <HorizontalScrollView
+        android:id="@+id/filter_buttons_scrollview"
         android:contentDescription="@string/lie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
