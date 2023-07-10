@@ -1,4 +1,4 @@
-package com.theta.rarecipe;
+package com.theta.rarecipe.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.theta.rarecipe.activities.HomePageActivity;
+import com.theta.rarecipe.R;
 
 public class CreateAccount extends AppCompatActivity {
 

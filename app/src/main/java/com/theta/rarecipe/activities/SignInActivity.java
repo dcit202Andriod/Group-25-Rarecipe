@@ -1,8 +1,10 @@
-package com.theta.rarecipe;
+package com.theta.rarecipe.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.theta.rarecipe.R;
 
 
 public class SignInActivity extends AppCompatActivity {
