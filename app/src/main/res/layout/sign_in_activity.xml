@@ -192,10 +192,12 @@
             android:textStyle="bold"/>
 
         <TextView
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:clickable="true"
+            android:linksClickable="true"
             android:text="@string/sign_up"
-            android:textColor="#FFC107"/>
+            android:textColor="#FFC107" />
     </LinearLayout>
 
 </RelativeLayout>
