@@ -23,13 +23,13 @@
             />
 
         <activity
-            android:name=".activities.SplashActivity"
+            android:name=".activities.HomePageActivity"
             android:exported="true" />
         <activity
             android:name=".activities.CreateAccount"
             android:exported="true" />
         <activity
-            android:name=".activities.HomePageActivity"
+            android:name=".activities.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
