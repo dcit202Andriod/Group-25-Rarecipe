@@ -7,4 +7,9 @@
         <item name="colorAccent">#FF562244</item>
     </style>
 
+    <style name="AppBottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemBackground">@color/white</item> <!-- Customize the background color -->
+        <item name="elevation">8dp</item> <!-- Set elevation to 0dp to remove the shadow effect -->
+    </style>
+
 </resources>
