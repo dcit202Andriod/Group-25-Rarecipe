@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_light"
-        android:text="Full Name"
+        android:text="@string/full_name"
         android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/FullName"
         app:layout_constraintStart_toStartOf="@+id/FullName" />
@@ -23,7 +23,7 @@
         android:layout_marginStart="18dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Create an account"
+        android:text="@string/create_an_account"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -41,7 +41,7 @@
         android:layout_marginTop="4dp"
         android:width="190dp"
         android:fontFamily="@font/poppins_light"
-        android:text="Let's help you set up your account, it won't take long."
+        android:text="@string/set_up"
         android:textColor="#121212"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/textView3"
@@ -52,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_light"
-        android:text="Email"
+        android:text="@string/email"
         android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/editText2"
         app:layout_constraintStart_toStartOf="@+id/editText2" />
@@ -62,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_light"
-        android:text="Confirm Password"
+        android:text="@string/confirm_password"
         android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/password_confirm"
         app:layout_constraintStart_toStartOf="@+id/password_confirm" />
@@ -75,12 +75,11 @@
         android:layout_marginTop="8dp"
         android:checked="false"
         android:fontFamily="@font/poppins_light"
-        android:text="Accept terms &amp;  conditions"
+        android:text="@string/terms_and_conditions"
         android:textColor="#FF9C00"
         android:textColorHighlight="#562244"
         android:textColorHint="#562244"
         android:textColorLink="#562244"
-        app:circularflow_defaultRadius="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_confirm" />
 
@@ -109,7 +108,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_light"
-        android:text="Password"
+        android:text="@string/password"
         android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/password"
         app:layout_constraintStart_toStartOf="@+id/password" />
@@ -121,7 +120,7 @@
         android:layout_marginStart="100dp"
         android:layout_marginBottom="32dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Already a member?"
+        android:text="@string/member"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -135,7 +134,7 @@
         android:autoLink="phone"
         android:fontFamily="@font/poppins_semibold"
         android:linksClickable="true"
-        android:text="Sign in"
+        android:text="@string/sign_in"
         android:textColor="#FF9C00"
         android:textColorLink="#562244"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -145,6 +144,7 @@
 
     <ImageButton
         android:id="@+id/imageButton4"
+        android:contentDescription="@string/lie"
         android:layout_width="46dp"
         android:layout_height="46dp"
         android:layout_marginStart="180dp"
@@ -163,7 +163,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="10dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Or Sign in With"
+        android:text="@string/or"
         android:textColor="#C5C4C4"
         app:layout_constraintBottom_toTopOf="@+id/imageButton4"
         app:layout_constraintEnd_toStartOf="@+id/imageView"
@@ -179,7 +179,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.177"
         app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:srcCompat="@drawable/horizontal_line_svgrepo_com" />
+        app:srcCompat="@drawable/horizontal_line_svgrepo_com"
+        android:contentDescription="@string/lie" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -190,10 +191,12 @@
         app:layout_constraintBottom_toTopOf="@+id/imageButton"
         app:layout_constraintEnd_toStartOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/horizontal_line_svgrepo_com" />
+        app:srcCompat="@drawable/horizontal_line_svgrepo_com"
+        android:contentDescription="@string/lie" />
 
     <ImageButton
         android:id="@+id/imageButton"
+        android:contentDescription="@string/lie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
@@ -220,7 +223,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.396"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="name" />
 
     <EditText
         android:id="@+id/editText2"
@@ -238,7 +242,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.396"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/FullName" />
+        app:layout_constraintTop_toBottomOf="@+id/FullName"
+        android:autofillHints="emailAddress" />
 
     <EditText
         android:id="@+id/password"
@@ -256,7 +261,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.405"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        android:autofillHints="password" />
 
     <EditText
         android:id="@+id/password_confirm"
@@ -274,7 +280,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.405"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        android:autofillHints="password" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

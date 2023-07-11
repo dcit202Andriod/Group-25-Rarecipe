@@ -71,4 +71,12 @@
     <string name="popular_category">Popular Category</string>
     <string name="recent_recipes">Recent Recipes</string>
     <string name="popular_creators">Popular creators</string>
+    <string name="full_name">Full Name</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="set_up">Let\'s help you set up your account, it won\'t take long.</string>
+    <string name="email">Email</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="terms_and_conditions"><![CDATA[Accept terms & conditions]]></string>
+    <string name="member">Already a member?</string>
+    <string name="or">Or Sign in With</string>
 </resources>
