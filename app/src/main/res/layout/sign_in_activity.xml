@@ -111,7 +111,7 @@
         android:gravity="start"/>
 
     <Button
-        android:id="@+id/signIn_Btn"
+        android:id="@+id/signIn_button"
         android:layout_width="320dp"
         android:layout_height="64dp"
         android:layout_marginTop="6dp"
@@ -128,7 +128,7 @@
         android:id="@+id/OrSignInWith"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/signIn_Btn"
+        android:layout_below="@id/signIn_button"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"

@@ -16,7 +16,7 @@ public class CreateAccount extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
 
-        Button signUpButton = findViewById(R.id.signIn_Btn);
+        Button signUpButton = findViewById(R.id.signUp_button);
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
