@@ -9,20 +9,21 @@ import android.widget.Button;
 
 import com.theta.rarecipe.R;
 
-public class CreateAccount extends AppCompatActivity {
+public class CongratsPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_account);
+        setContentView(R.layout.activity_congrats_page);
 
-        Button signUpButton = findViewById(R.id.signUp_button);
-        signUpButton.setOnClickListener(new View.OnClickListener() {
+        Button continueButton = findViewById(R.id.continueButton);
+        continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CreateAccount.this, CongratsPage.class);
+                Intent intent = new Intent(CongratsPage.this, HomePageActivity.class);
                 startActivity(intent);
             }
         });
+
     }
 }
